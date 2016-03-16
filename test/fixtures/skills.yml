@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  technology: MyString
+  profiency: MyString
+  scale: 1
+
+two:
+  technology: MyString
+  profiency: MyString
+  scale: 1

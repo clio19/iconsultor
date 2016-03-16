@@ -27,10 +27,6 @@ group :production, :mysql do
   gem 'mysql2'
 end
 
-group :production, :postgresql do
-  gem 'pg'
-end
-
 ### / OpenShift changes
 
 # Use SCSS for stylesheets
@@ -66,3 +62,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Para Word parse
+gem 'htmltoword'
+# Auth
+gem 'devise'
+
+gem 'will_paginate'

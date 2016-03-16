@@ -1,0 +1,9 @@
+<h2> Users</h2>
+<p>As an administrator, you can view users in the system.</p>
+<p>
+  <ul class="users">
+    <% @users.each do |user| %>
+      <li><%= user.id %> <%= user.name %> <%= user.email %> <%# link_to "Edit User", admin_edit_user_details_path(user) %></li>
+    <% end %>
+  </ul>
+</p>

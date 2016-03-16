@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>All Skills</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Technology</th>
+      <th>Profiency</th>
+      <th>Scale</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skills.each do |skill| %>
+      <tr>
+        <td><%= skill.technology %></td>
+        <td><%= skill.profiency %></td>
+        <td><%= skill.scale %></td>
+        <td><%= skill.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
