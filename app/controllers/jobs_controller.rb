@@ -18,7 +18,7 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new
+     @job = current_company.jobs.build
     respond_with(@job)
   end
 
@@ -26,13 +26,14 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(job_params)
+    @job = current_company.jobs.build(job_params)
     @job.save
     respond_with(@job)
   end
 
   def update
     @job.update(job_params)
+    @job.company = current_company
     respond_with(@job)
   end
 
@@ -47,6 +48,6 @@ class JobsController < ApplicationController
     end
 
     def job_params
-      params.require(:job).permit(:title, :description, :prime)
+      params.require(:job).permit(:title, :description, :prime, :company_id)
     end
 end

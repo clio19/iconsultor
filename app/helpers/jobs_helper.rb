@@ -1,6 +1,6 @@
 module JobsHelper
     def job_title(job)
-    title = h(job.title)
+    title = raw("#{h(job.title)} - #{job.company.email}")
 
     if job.prime
       title + content_tag(:strong, " (prime)")
