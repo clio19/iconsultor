@@ -4,6 +4,8 @@ class Company < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+ validates :name,:email, :presence => true
+
   has_many :jobs
 
 end

@@ -5,12 +5,12 @@ class JobsController < ApplicationController
   respond_to :html
 
   def index
-    @jobs = Job.all
+    @jobs = Job.most_recent.includes(:company).all
     respond_with(@jobs)
   end
 
   def prime
-    @jobs = Job.most_recent.paginate(page: params[:page], per_page: 3)
+    @jobs = Job.most_recent.includes(:company).paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -23,6 +23,7 @@ class JobsController < ApplicationController
   end
 
   def edit
+    @job = current_company.jobs.find(params[:id])
   end
 
   def create
@@ -32,12 +33,15 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job.update(job_params)
-    @job.company = current_company
+     @job.update(job_params)
+     @job.company = current_company
+    # or
+    #@job = current_company.jobs.find(params[:id])
     respond_with(@job)
   end
 
   def destroy
+    @job = current_company.jobs.find(params[:id])
     @job.destroy
     respond_with(@job)
   end

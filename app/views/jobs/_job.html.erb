@@ -6,8 +6,11 @@
 <%= simple_format job.description %>
 
 <p>
-<%# pluralize(job.comments.size, "comment") %> |
+<%# pluralize(job.comments.size, "comment") %>
     <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_company == job.company %>
+         <td><%= link_to 'Edit', edit_job_path(job) %></td> |
+         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+
 </p>
