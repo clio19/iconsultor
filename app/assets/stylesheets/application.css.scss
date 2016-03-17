@@ -1,0 +1,15 @@
+/*
+ * ...boilerplate application.css.scss comments
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize/components/color";
+$primary-color: color("green", "lighten-2") !default;
+@import 'materialize';
+
+::-webkit-input-placeholder { color: #37631B; opacity: 1 !important; }
+:-moz-placeholder { color: #37631B;}
+::-moz-placeholder {color: #37631B;}
+:-ms-input-placeholder {color: #37631B;}
+
+
