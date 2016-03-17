@@ -26,8 +26,7 @@ Use the command above if you don't want to install  gems
 
 ### Assets ###
 Your application is set to precompile the assets every time you push
-to OpenShift. Any assets you commit to your repo will be preserved
-alongside those which are generated during the build.
+
 
 By adding `disable_asset_compilation` marker, you will disable asset compilation upon application deployment.
 
@@ -35,7 +34,7 @@ By adding `disable_asset_compilation` marker, you will disable asset compilation
 Since these quickstarts are shared code, we had to take special
 
 
-If you do so, OpenShift will run your application under 'development' mode.
+If you do so,  run your application under 'development' mode.
 In development mode, your application will:
 
 * Show more detailed errors in browser
@@ -50,6 +49,7 @@ In development mode, your application will:
 
 1. cd iconsultor
 
+1. bundle install
 
 1. Add database support to your application
 
@@ -59,6 +59,7 @@ In development mode, your application will:
 
  for pruduction , on development use sqlite3
 
+1. rails server
 
     ```
 
