@@ -16,6 +16,10 @@ Your application is configured to use MYsql 5.5 database
 bundle install
 ```
 
+## https://iconsultor-htrik.rhcloud.com ##
+
+
+
 Use the command above if you want to install  gems 
 
 ### Assets ###
@@ -47,21 +51,33 @@ In development mode, your application will:
 
 1. Add database support to your application
 
+[VER DEMO / SEE DEMO ](https://iconsultor-htrik.rhcloud.com)
+
     ```
     mysql-5.5 for production , on development,  use sqlite3
     ```
 
  
 
+1. git clone
+
+
+1. cd iconsultor
+
+
+1. bundle install
+
+
+1. Add database support to your application
+mysql-5.5 for production , on development,  use sqlite3
+
+
 1. rails server
 
-    ```
 
 1. That's it! Enjoy your new Rails application!
 
-## DEMO of the APLICATION ##
 
-[template]: https://iconsultor-htrik.rhclou.com
 
 License
 -------
