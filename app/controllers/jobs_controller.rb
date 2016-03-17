@@ -4,8 +4,11 @@ class JobsController < ApplicationController
 
   respond_to :html
 
+
+
+
   def index
-    @jobs = Job.most_recent.includes(:company).all
+    @jobs = Job.all.paginate(page: params[:page], per_page: 6)
     respond_with(@jobs)
   end
 
@@ -54,4 +57,5 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :description, :prime, :company_id)
     end
+
 end

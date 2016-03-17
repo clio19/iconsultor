@@ -1,20 +1,17 @@
 <div class="card-panel blue">
 
-<h3>
-  <%= job_title job %>
+        <h3>
+          <%= job_title job %>
+        </h3>
 
-</h3>
+        <%= simple_format job.description %>
+        <p>
+            <td><%= link_to 'Show', job , :class => "waves-effect waves-light btn-large"%></td>
+            <% if current_company == job.company %>
+                 <td><%= link_to 'Edit', edit_job_path(job) , :class => "waves-effect waves-light btn-large yellow "%></td>
+                 <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } , :class => "waves-effect waves-light btn-large red"%></td>
+            <% end %>
 
-<%= simple_format job.description %>
-
-<p>
-<%# pluralize(job.comments.size, "comment") %>
-    <td><%= link_to 'Show', job , :class => "waves-effect waves-light btn-large"%></td>
-    <% if current_company == job.company %>
-         <td><%= link_to 'Edit', edit_job_path(job) %></td> |
-         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-
-</p>
+        </p>
 
 </div>

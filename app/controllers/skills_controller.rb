@@ -6,6 +6,8 @@ class SkillsController < ApplicationController
 
   respond_to :html
 
+  helper_method :sort_column, :sort_direction
+
   layout 'dash', :only => [:all]
 
   def index
@@ -19,7 +21,7 @@ class SkillsController < ApplicationController
   end
 
   def all
-     @skills = Skill.all
+     @skills = Skill.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -63,4 +65,14 @@ class SkillsController < ApplicationController
     def skill_params
       params.require(:skill).permit(:technology, :profiency, :scale, :user_id)
     end
+
+
+      def sort_column
+    Skill.column_names.include?(params[:sort]) ? params[:sort] : "technology"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end
