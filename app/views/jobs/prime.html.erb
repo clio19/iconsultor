@@ -1,8 +1,13 @@
 <h1>Prime jobs</h1>
-
+<%= link_to 'All Jobs', jobs_path , :class =>"waves-effect waves-light btn"%>
 <%= render @jobs %>
-<%= will_paginate @jobs %>
+<ul class="pagination">
+<li class="waves-effect"><%= will_paginate @jobs %>
+    </li>
+</ul>
 <br>
+<% if current_company %>
+    <%= link_to 'New Job', new_job_path, :class =>"btn-floating btn-large waves-effect waves-light red" %>
 
-<%= link_to 'New Job', new_job_path %>
-<%= link_to 'All Jobs', jobs_path %>
+<% end %>
+

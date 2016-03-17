@@ -1,18 +1,14 @@
 <h1><%= job_title @job %></h1>
+<p>Description</p>
 
 <%= simple_format @job.description %>
 
 <p>
-  <%# pluralize(@job.comments.size, "comment") %> |
+
 <% if current_company == @job.company %>
     <%= link_to 'Edit', edit_job_path(@job) %>
 <% end %>
 
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Back', jobs_path, :class => "waves-effect waves-light btn-large" %>
 </p>
 
-<h2>Send a new comment</h2>
-<%# render "comments/form" %>
-
-<h2>Comments</h2>
-<%# render @job.comments %>

@@ -15,10 +15,15 @@
     <%= f.label :technology %><br>
     <%= f.text_field :technology %>
   </div>
- <div class="field">
-    <%= f.label :profiency %><br>
-    <%= f.select(:profiency, ['Academic', 'Professional']) %>
-  </div>
+
+
+<div class="field">
+    <%= f.label :profiency %>
+    <%= f.select(:profiency, ['Academic', 'Professional'], { prompt: "Choose a category" }, :class => "browser-default" ) %>
+
+</div>
+
+
   <div class="field">
     <%= f.label :scale %><br>
     <%= f.text_field :scale %>

@@ -1,8 +1,10 @@
 <h1>Listing jobs</h1>
+<%= link_to 'Prime Jobs', root_path ,  :class => "waves-effect waves-light btn-large" %>
 
 <%= render @jobs %>
 
 <br>
-
+<% if current_company %>
 <%= link_to 'New Job', new_job_path %>
-<%= link_to 'Prime Jobs', root_path %>
+<% end %>
+
