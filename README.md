@@ -43,40 +43,24 @@ In development mode, your application will:
 
 ## Manual Installation ##
 
-1. git clone
-
-1. cd iconsultor
-
-1. bundle install
-
-1. Add database support to your application
 
 [VER DEMO / SEE DEMO ](https://iconsultor-htrik.rhcloud.com)
 
-    ```
-    mysql-5.5 for production , on development,  use sqlite3
-    ```
-
- 
-
 1. git clone
-
 
 1. cd iconsultor
 
-
 1. bundle install
 
+1. rake db:migrate
 
-1. Add database support to your application
-mysql-5.5 for production , on development,  use sqlite3
-
-
+ Add database support to your application
+    ```
+    mysql-5.5 for production , on development,  use sqlite3
+    ```
 1. rails server
 
-
 1. That's it! Enjoy your new Rails application!
-
 
 
 License
